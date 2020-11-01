@@ -31,11 +31,11 @@ exports[`Question it renders all components 1`] = `
               cx="149.72"
               cy="153.06"
               r="135.25"
-              stroke="#393d38"
+              stroke="rgb(9, 94, 67)"
             />
             <path
               d="m284.97 153.06a135.25 135.25 0 0 1-135.25 135.25 135.25 135.25 0 0 1-135.25-135.25 135.25 135.25 0 0 1 135.25-135.25 135.25 135.25 0 0 1 135.25 135.25z"
-              stroke="#0d7857ff"
+              stroke="#1af6b3ff"
               stroke-dasharray="849.27 849.37"
             />
           </g>
@@ -99,7 +99,14 @@ exports[`Question it renders all components 1`] = `
         class=""
       >
         <span>
-          200
+          700
+        </span>
+      </button>
+      <button
+        class=""
+      >
+        <span>
+          500
         </span>
       </button>
       <button
@@ -113,14 +120,7 @@ exports[`Question it renders all components 1`] = `
         class=""
       >
         <span>
-          700
-        </span>
-      </button>
-      <button
-        class=""
-      >
-        <span>
-          500
+          200
         </span>
       </button>
     </div>

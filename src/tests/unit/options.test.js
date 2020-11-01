@@ -7,7 +7,7 @@ import { Options } from "../../components/Options";
 const optionsProps = {
     allOptions: ["500", "200", "1000", "700"],
     correctOption: "700",
-    answerIsCorrect: false,
+    answerIsCorrect: undefined,
     dispatch: jest.fn(),
     setShowResult: jest.fn(),
     showResult: false,
