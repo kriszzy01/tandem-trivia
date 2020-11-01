@@ -7,6 +7,8 @@ Redux and React Router were not used to reduce external packages as stated in th
     An application that displays trivia questions with multiple-choice answers to select from. 
 
 ## Complexties to look out for
+    * Each round provides randomly shuffled set of 10 questions.
+
     * Multi-choice answers shuffle positions randomly. Be quick when choosing options.
 
     * If you fail a question, random (sometimes harsh) comments are accompanied by the correct answer.
