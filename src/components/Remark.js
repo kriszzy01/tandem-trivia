@@ -1,5 +1,5 @@
 import React, {useMemo} from "react";
-import { actionTypes, randomNumber as randomNumber } from "../utils";
+import { actionTypes, randomNumber } from "../utils";
 
 export const Remark = ({
     dispatch,
