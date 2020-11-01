@@ -1,0 +1,24 @@
+.remark {
+    position: relative;
+    height: 11rem;
+    overflow: hidden;
+    max-width: 18rem;
+
+
+    &__comments {
+        min-width: 200px;
+        font-family: Georgia;
+        font-size: 1rem;
+    }
+
+    &__hidden {
+        height: 0;
+        transition: height 0.5 linear;
+    }
+
+    > :last-child {
+        position: absolute;
+        right: 0;
+        bottom: 0rem;
+    }
+}
