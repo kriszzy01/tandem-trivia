@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`home renders all components 1`] = `
+<div>
+  <section
+    class="home"
+  >
+    <header>
+      <h1>
+        Tandem Trivia
+      </h1>
+    </header>
+    <div
+      class="rules | gap-top-500"
+    >
+      <h2>
+        Game Rules
+      </h2>
+      <div
+        class="gap-top-400"
+      >
+        <ul
+          class="rules__list | flow"
+        >
+          <li>
+            A Round has Ten(10) Random questions.
+          </li>
+          <li>
+            Each correct answer equals One(1) point.
+          </li>
+          <li>
+            Each question has a Time Limit of Ten(seconds).
+          </li>
+          <li
+            class="color-neutral"
+          >
+            !--Answers SHUFFLE randomly every two seconds, so be CAREFULL and QUICK when selecting--!
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="gap-top-500"
+    >
+      <label
+        for="rulesCheck"
+      >
+        <input
+          id="rulesCheck"
+          type="checkbox"
+          value="rulesRead"
+        />
+        <span>
+          I'm Ready!
+        </span>
+      </label>
+    </div>
+    <button
+      class="center | gap-top-500"
+    >
+      Start Game
+    </button>
+  </section>
+</div>
+`;
