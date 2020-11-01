@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c35df21f98b9af49da3e7e9aab8e1b21",
+    "revision": "de11eda760b26b2d5e7c28e057bbf5bc",
     "url": "/tandem-trivia/index.html"
   },
   {
-    "revision": "d231a5595c7ff84d63f6",
+    "revision": "0f79939b89822f7e7038",
     "url": "/tandem-trivia/static/css/main.e8ac03f6.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tandem-trivia/static/js/2.9bc3a455.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d231a5595c7ff84d63f6",
-    "url": "/tandem-trivia/static/js/main.6d4de504.chunk.js"
+    "revision": "0f79939b89822f7e7038",
+    "url": "/tandem-trivia/static/js/main.41b788ac.chunk.js"
   },
   {
     "revision": "946ef9bd737f8f9a864e",
