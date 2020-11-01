@@ -28,7 +28,7 @@ export const Options = ({
                     key={option}
                     onClick={() => submitAnswer(option)}
                     className={answerIsCorrect && option === correctOption ? "options__correct" : ""}
-                    disabled={timeLeft < 1}>
+                    disabled={timeLeft < 1 || answerIsCorrect !== undefined}>
                     <span>{option}</span>
                 </button>
             )}
