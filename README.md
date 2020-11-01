@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-It manages state using useReducer Hook. Navigation is achieved using conditional rendering.
+It manages state using useReducer Hook. Navigation is achieved using conditional rendering.<br />
 Redux and React Router were not used to reduce external packages as stated in the requirements.
 
 # Goal
