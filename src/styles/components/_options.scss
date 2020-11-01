@@ -1,0 +1,10 @@
+.options {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+
+    &__correct {
+        --button-background: var(--color-tertiary-shade);
+        --button-color: var(--color-neutral);
+    }
+}
