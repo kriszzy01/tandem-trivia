@@ -1,0 +1,22 @@
+.timer {
+    --timer-space: calc(50% - 25px);
+
+    position: relative;
+    height: 4.5rem;
+    width: 6.25rem;
+    transition: 1s linear all;
+
+    &__svg {
+        height: inherit;
+        width: inherit;
+        transform: rotate(-90deg);
+    }
+
+    &__label {
+        position: absolute;
+        top: var(--timer-space);
+        left: var(--timer-space);
+        transform: translate(calc(-50% + 25px), calc(-50% + 25px));
+        text-align: center;
+    }
+};
