@@ -1,6 +1,43 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+It manages state using useReducer Hook. Navigation is achieved using conditional rendering.
+Redux and React Router were not used to reduce external packages as stated in the requirements.
+
+# Goal
+    An application that displays trivia questions with multiple-choice answers to select from. 
+
+## Complexties to look out for
+    * Multi-choice answers shuffle positions randomly. Be quick when choosing options.
+
+    * If you fail a question, random (sometimes harsh) comments are accompanied by the correct answer.
+
+## Future Planned Improvements
+    * Types using Typescript
+    * Sound Interactions (to Timer, right and wrong answers etc).
+    * Animations using GSAP or Framer 
+    * Emojis to remarks
+    * Accessibility
+    * Page transitions using React Router
+    * State Management using Redux.
+    * End to End tests using Cypress.
+
+    React Router and Redux were not used to keep the package simple as stated in the requirements.
+
+## Dependencies
+
+    * System Dependencies
+        * Node.js
+
+    * Application Dependencies
+        * React.js: v16.13.1
+        * React-DOM: v16.9.8
+        * Node-sass: v4.14.1
+
+    * Development Dependencies
+        * React Testing Library
+            * User Event: v7.2.1
+            * Jest DOM: v4.2.4
+            * React: v9.5.0
 
 In the project directory, you can run:
 
@@ -37,32 +74,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
