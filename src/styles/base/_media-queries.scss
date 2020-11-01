@@ -1,0 +1,5 @@
+@mixin small-devices-only { 
+    @media screen and (max-width: 48em) {
+        @content;
+    }  
+}

@@ -1,0 +1,38 @@
+.font-base {
+    font-size: 1rem;
+}
+
+//Color
+.color-secondary {
+    color: var(--color-secondary);
+}
+
+.color-neutral {
+    color: var(--color-neutral);
+}
+
+.color-warning {
+    color: var(--color-warning);
+}
+
+.color-tertiary-shade {
+    color: var(--color-tertiary-shade);
+}
+
+.color-tertiary {
+    color: var(--color-tertiary);
+}
+
+//Top Margin 
+.gap-top-400 {
+    margin-top: $scale2;
+}
+
+.gap-top-500 {
+    margin-top: $scale3;
+}
+
+//Font weight
+.weight-bold {
+    font-weight: bold;
+}

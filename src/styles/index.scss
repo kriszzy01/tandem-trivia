@@ -1,0 +1,20 @@
+//Base
+@import "./base/variables";
+@import "./base/media-queries";
+@import "./base/reset";
+@import "./base/global";
+@import "./base/tokens";
+
+//Components
+@import "./components/countTimer";
+@import "./components/home";
+@import "./components/remark";
+@import "./components/question";
+@import "./components/options";
+
+//Utilities
+@import "./utitlies/wrapper";
+@import "./utitlies/center";
+@import "./utitlies/flow";
+@import "./utitlies/splitter";
+@import "./utitlies/imposter";

@@ -1,0 +1,32 @@
+//Color
+:root {
+    --button-color: var(--color-tertiary-shade);
+    --button-background: var(--color-neutral);
+    --color-primary: #541b83fe;
+    --color-neutral: #fff;
+    --color-dark: #000;
+    --color-secondary: #755503fe;
+    --color-tertiary: #1af6b3ff;
+    --color-tertiary-shade: #0d7857ff;
+    --color-warning: #e31227fc;
+}
+
+//Scale
+$base-scale: 1rem;
+
+$scale1: $base-scale * 0.8;
+$scale2: $base-scale * 1.4;
+$scale3: $base-scale * 1.88;
+$scale4: $base-scale * 2.33;
+$scale5: $base-scale * 3.4;
+
+//Font
+$font-secondary: verdana;
+$font-primary: monospace;
+
+//Font Weight 
+$font-bold: 800;
+
+//Measure
+$measure-long: 35ch;
+$measure-compact: 16ch;

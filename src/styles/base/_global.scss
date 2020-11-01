@@ -1,0 +1,45 @@
+body {
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    line-height: 1.5;
+    font-size: 1rem;
+    font-family: $font-secondary;
+    letter-spacing: 0.1rem;
+    color: var(--color-dark);
+    overflow-x: hidden;
+    box-shadow: 0 0 7px var(--color-primary);
+
+    @include small-devices-only {
+        font-size: 0.8rem;
+    }
+}
+
+h1,
+h2,
+h3 {
+    @extend .center;
+    line-height: 1.1;
+    font-family: $font-primary;
+    font-weight: $font-bold;
+    color: var(--color-neutral);
+    max-width: $measure-compact;
+}
+
+h1 {
+    font-size: $scale3;
+}
+
+h2 {
+    font-size: $scale2;
+}
+
+h3 {
+    font-size: $scale1;
+}
+
+svg {
+    height: inherit;
+    width: inherit;
+}
