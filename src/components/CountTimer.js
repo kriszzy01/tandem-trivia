@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useLayoutEffect } from "react";
 import { actionTypes } from "../utils";
 
 export const CountTimer = ({ 
@@ -11,23 +11,21 @@ export const CountTimer = ({
 
     const getTimeRatio = () => (timeLeft / 10) * fullTimeScale - 0.1;
 
-    const startTimer = useCallback(() => {
-        if (timeLeft !== 0 && answerIsCorrect === undefined) {
-            setTimeout(function start() {
+    useLayoutEffect(() => {
+        const startTimer = setTimeout(() => {
+            if (timeLeft !== 0 && answerIsCorrect === undefined) {
                 dispatch({type: actionTypes.RUN_TIMER})
-            }, 2000);
-        } else return;
-    }, [dispatch, timeLeft, answerIsCorrect]);
+            }
+        }, 2000);
 
-    useEffect(() => {
-        if (answerIsCorrect !== undefined) {
-            return;
-        } else if (timeLeft !== 0) {
-            startTimer();
-        } else {
+        if (answerIsCorrect === undefined && timeLeft === 0) {
             dispatch({ type: actionTypes.SELECT_ANSWER, payload: false });
         }
-    }, [timeLeft, startTimer, dispatch, answerIsCorrect]);
+
+        return () => {
+            clearTimeout(startTimer);
+        }
+    }, [timeLeft, dispatch, answerIsCorrect]);
 
     return (
         <div className="timer">
