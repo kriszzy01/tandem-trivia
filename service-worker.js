@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tandem-trivia/precache-manifest.cf047f3f545ef38c1d8d8f02971c56b0.js"
+  "/tandem-trivia/precache-manifest.55861e41d1e5ec1196585c0eb8a592ed.js"
 );
 
 self.addEventListener('message', (event) => {
