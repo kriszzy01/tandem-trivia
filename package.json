@@ -1,13 +1,9 @@
 {
-  "homepage": "https://kriszzy01.github.io/FEM-Easybank",
+  "homepage": "https://kriszzy01.github.io/tandem-trivia",
   "name": "react-testing",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.30",
-    "@fortawesome/free-solid-svg-icons": "^5.14.0",
-    "@fortawesome/react-fontawesome": "^0.1.11",
-    "@reduxjs/toolkit": "^1.4.0",
     "@testing-library/user-event": "^7.2.1",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.2",
@@ -16,9 +12,7 @@
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.1",
     "react-scripts": "3.4.1",
-    "redux": "^4.0.5",
     "typescript": "^4.0.3"
   },
   "scripts": {
@@ -48,7 +42,6 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
-    "gh-pages": "^3.1.0",
-    "msw": "^0.21.2"
+    "gh-pages": "^3.1.0"
   }
 }
