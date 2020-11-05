@@ -38,4 +38,4 @@ export const GameProvider: React.FC<GameProviderProps> = ({
     );
 };
 
-export const useGameState = useContext(GameContext);
+export const useGameState = () => useContext(GameContext);
