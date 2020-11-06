@@ -1,36 +1,36 @@
 import { 
     State, 
-    Action 
+    Action,
+    GameStatus 
 } from "../types";
 
 import { initialState } from "./state";
 
-export const reducer = (state: State, action: Action) => {
+export const reducer = (state: State, action: Action): State => {
     switch (action.type) {
         case "START_GAME":
             return {
                 ...state,
-                newRound: action.payload,
-                gameStatus: "ongoing"
+                gameRound: action.payload,
+                gameStatus: GameStatus.ONGOING
             }
         case "REPLAY_GAME": 
             return {
                 ...state,
                 ...initialState,
-                newRound: action.payload,
-                gameStatus: "idle"
+                gameRound: action.payload,
+                gameStatus: GameStatus.IDLE
             }
         case "NEXT_QUESTION":
             return {
                 ...state,
-                questionNumber: action.payload,
-                answerIsCorrect: undefined,
-                timeLeft: 10
+                currentQuestion: action.payload,
+                correctAnswer: undefined,
             }
         case "SELECT_ANSWER":
             return {
                 ...state,
-                answerIsCorrect: action.payload,
+                correctAnswer: action.payload,
             }
         /*case "START_TIMER": {
             return {
@@ -41,7 +41,7 @@ export const reducer = (state: State, action: Action) => {
         case "END_GAME": {
             return {
                 ...state,
-                gameStatus: "result"
+                gameStatus: GameStatus.COMPLETED
             }
         }
         default:
