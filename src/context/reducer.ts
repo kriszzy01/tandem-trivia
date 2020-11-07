@@ -25,19 +25,20 @@ export const reducer = (state: State, action: Action): State => {
             return {
                 ...state,
                 currentQuestion: action.payload,
-                correctAnswer: undefined,
+               answerSelected: false,
+               timeElapsed: true
             }
         case "SELECT_ANSWER":
             return {
                 ...state,
-                correctAnswer: action.payload,
+                answerSelected: true,
             }
-        /*case "START_TIMER": {
+        case "TIME_ELAPSED": {
             return {
                 ...state,
-                timeLeft: state.timeLeft - 2
+                timeElapsed: true
             }
-        }*/
+        }
         case "END_GAME": {
             return {
                 ...state,
