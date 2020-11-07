@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import {
-    shuffleQuestions,
-    actionTypes
-} from "../utils";
+import { shuffleArray } from "../utils";
+import { useGameState } from "../context";
+import { Question } from "../types";
+import triviaQuestions from "../assets/trivia_questions.json";
 
-export const Home = ({ dispatch }) => {
+export const Home: React.FC = () => {
     const [rulesRead, setRulesRead] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
 
-    const handleBeginGame = () => {
+    const [, dispatch] = useGameState();
+
+    const handleBeginGame = (): void => {
         if (!rulesRead) {
             setShowAlert(true);
 
@@ -16,12 +18,12 @@ export const Home = ({ dispatch }) => {
         }
 
         dispatch({
-            type: actionTypes.START_GAME,
-            payload: shuffleQuestions()
+            type: "START_GAME",
+            payload: shuffleArray<Question>(triviaQuestions)
         })
     };
 
-    const handleToggleCheckbox = () => {
+    const handleToggleCheckbox = (): void => {
         setRulesRead(!rulesRead);
         setShowAlert(false)
     };
