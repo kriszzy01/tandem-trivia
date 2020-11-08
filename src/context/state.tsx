@@ -1,8 +1,7 @@
 import React, { 
     useReducer, 
     createContext, 
-    useContext, 
-    ReactNode
+    useContext
 } from "react";
 
 import { State, GameStatus, Action } from "../types";
@@ -11,8 +10,8 @@ export const initialState: State = {
     gameRound: [],
     currentQuestion: 1,
     gameStatus: GameStatus.IDLE,
-    correctAnswer: undefined,
-    timeElapsed: false
+    answerSelected: undefined,
+    timeElapsed: 8
 };
 
 const GameContext = createContext<[State, React.Dispatch<Action>]>([
@@ -22,7 +21,7 @@ const GameContext = createContext<[State, React.Dispatch<Action>]>([
 
 interface GameProviderProps {
     reducer: React.Reducer<State, Action>;
-    children: ReactNode;
+    children: React.ReactNode;
 }
 
 export const GameProvider: React.FC<GameProviderProps> = ({
