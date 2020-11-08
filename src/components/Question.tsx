@@ -1,23 +1,19 @@
 import React, { useState } from "react";
+import { useGameState } from "../context";
 import { Options } from "./Options";
 import { Remark } from "./Remark";
-import { CountTimer } from "./CountTimer";
+import { Timer } from "./Timer";
 import { Result } from "./Result";
 
-export const Question = ({
-    newRound,
-    questionNumber,
-    gameStatus,
-    answerIsCorrect,
-    timeLeft,
-    dispatch
-}) => {
+export const QuizQuestion: React.FC = () => {
     const [showResult, setShowResult] = useState({
         result: 0,
         isResultPage: false,
     })
 
-    const selectedQuestion = newRound[questionNumber - 1];
+    const [{ currentQuestion, gameRound }] = useGameState()
+
+    const selectedQuestion = gameRound[currentQuestion - 1];
 
     const incorrectOptions = selectedQuestion.incorrect;
 
@@ -30,11 +26,8 @@ export const Question = ({
             {!showResult.isResultPage ?
                 <section className="question | flow">
                     <div className="question__header | splitter">
-                        <h2 className="center">{`Question ${questionNumber}/${newRound.length}`}</h2>
-                        <CountTimer
-                            answerIsCorrect={answerIsCorrect}
-                            timeLeft={timeLeft}
-                            dispatch={dispatch} />
+                        <h2 className="center">{`Question ${currentQuestion}/${gameRound.length}`}</h2>
+                        <Timer />
                     </div>
 
                     <div className="question__main">
@@ -50,29 +43,14 @@ export const Question = ({
                         <p className="imposter | color-tertiary-shade">{selectedQuestion.question}</p>
                     </div>
 
-                    <Options
-                        allOptions={allOptions}
-                        correctOption={correctOptions}
-                        dispatch={dispatch}
-                        timeLeft={timeLeft}
-                        answerIsCorrect={answerIsCorrect}
-                        setShowResult={setShowResult}
-                        showResult={showResult}
-                    />
+                    <Options allOptions={allOptions} correctOptions={correctOptions} />
 
                     <Remark
-                        dispatch={dispatch}
-                        gameStatus={gameStatus}
-                        questionNumber={questionNumber}
-                        answerIsCorrect={answerIsCorrect}
                         correctOption={correctOptions}
                         setShowResult={setShowResult}
-                        showResult={showResult}
-                    />
+                        showResult={showResult} />
                 </section> :
-                <Result 
-                    result={showResult.result} 
-                    dispatch={dispatch}/>
+                <Result result={showResult.result} />
             }
         </>
     );

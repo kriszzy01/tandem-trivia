@@ -3,9 +3,9 @@ import React, { useLayoutEffect, useState } from "react";
 import { useGameState } from "../context";
 
 export const Timer: React.FC = () => {
-    const [timeLeft, setTimeLeft] = useState(8);
-
     const [{ answerSelected }, dispatch] = useGameState();
+
+    const [timeLeft, setTimeLeft] = useState(8);
 
     const fullTimeScale: number = 849.37; //Gotten from the perimeter of the SVG circle, with Radius = 135.25
 
@@ -13,13 +13,14 @@ export const Timer: React.FC = () => {
 
     useLayoutEffect(() => {
         const startTimer = setTimeout(() => {
-            if (timeLeft !== 0 && !answerSelected) {
+            if (timeLeft !== 0 && answerSelected === undefined) {
                 setTimeLeft(timeLeft - 1);
             }
         }, 1000);
 
         if (!answerSelected && timeLeft === 0) {
             dispatch({ type: "TIME_ELAPSED" });
+            dispatch({ type: "SELECT_ANSWER", payload: false })
         }
 
         return () => {

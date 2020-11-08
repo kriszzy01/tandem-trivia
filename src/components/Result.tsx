@@ -1,9 +1,12 @@
 import React from "react";
-import { actionTypes, shuffleQuestions } from "../utils";
+import { shuffleArray } from "../utils";
+import { useGameState } from "../context";
 
-export const Result = ({ result, dispatch }) => {
+export const Result: React.FC<{result: number}> = ({ result }) => {
+    const [, dispatch] = useGameState();
+
     const handleNewRound = () => {
-        dispatch({ type: actionTypes.REPLAY_GAME, payload: shuffleQuestions() })
+        //dispatch({ type: actionTypes.REPLAY_GAME, payload: shuffleQuestions() })
     }
 
     return (

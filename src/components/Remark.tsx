@@ -1,24 +1,41 @@
-import React, {useMemo} from "react";
-import { actionTypes, randomNumber } from "../utils";
+import React, { useMemo, SetStateAction } from "react";
+import { randomNumber } from "../utils";
+import { useGameState } from "../context";
 
-export const Remark = ({
-    dispatch,
-    gameStatus,
-    questionNumber,
-    answerIsCorrect,
+interface RemarkProps {
+    correctOption: string;
+    setShowResult: React.Dispatch<SetStateAction<{ result: number, isResultPage: boolean }>>;
+    showResult: { result: number, isResultPage: boolean }
+}
+
+interface Remarks {
+    correct: string[];
+    incorrect: string[];
+}
+
+const remarks: Remarks = {
+    correct: ["You beautiful Genius!", "Einstein would be proud of you!", "You're almost smarter than me!", "You deserve an electronic kiss!"],
+    incorrect: ["I think I overestimated your IQ!", "How could you fail that!", "Shamefully Wrong!", "I knew this even without a brain"]
+};
+
+export const Remark: React.FC<RemarkProps> = ({
     correctOption,
     setShowResult,
     showResult }
 
 ) => {
 
+    const [state, dispatch] = useGameState();
+
+    const { gameStatus, currentQuestion, answerSelected, timeElapsed } = state;
+
     const randomNum = useMemo(() => randomNumber(4), [correctOption]);
 
     const nextQuestion = () => {
-        if (gameStatus !== "idle" && questionNumber < 10) {
+        if (gameStatus !== "idle" && currentQuestion < 10) {
             dispatch({
-                type: actionTypes.NEXT_QUESTION,
-                payload: questionNumber + 1
+                type: "NEXT_QUESTION",
+                payload: currentQuestion + 1
             });
         }
     };
@@ -31,7 +48,7 @@ export const Remark = ({
     }
 
     return (
-        <div className={`remark ${answerIsCorrect === undefined ? "remark__hidden" : ""}`}>
+        <div className={`remark ${answerSelected === undefined ? "remark__hidden" : ""}`}>
             <svg role="" version="1.1" viewBox="0 0 91.714 61.373" xmlns="http://www.w3.org/2000/svg">
                 <path d="m17.708 45.605 9.2181 5.5794-25.471 9.4607 15.768-8.7329z" fill="#fff" />
                 <g transform="matrix(.92162 0 0 .91569 -2.9371 -10.988)" fill="#fff">
@@ -42,16 +59,16 @@ export const Remark = ({
             <div className="remark__comments imposter">
                 <p>
                     {
-                        answerIsCorrect ?
+                        answerSelected === true && Boolean(timeElapsed) ?
                             remarks.correct[randomNum] :
                             `${remarks.incorrect[randomNum]}`
                     }
                 </p>
-                {!answerIsCorrect && <p>The correct answer is <span className="color-tertiary-shade weight-bold">{correctOption}</span></p>}
-                {answerIsCorrect && <p>Absolutely Correct!</p>}
+                {!answerSelected && <p>The correct answer is <span className="color-tertiary-shade weight-bold">{correctOption}</span></p>}
+                {answerSelected && <p>Absolutely Correct!</p>}
             </div>
 
-            {questionNumber < 10 ?
+            {currentQuestion < 10 ?
                 <button
                     onClick={nextQuestion}>
                     Next Question
@@ -63,9 +80,4 @@ export const Remark = ({
             }
         </div>
     );
-};
-
-const remarks = {
-    correct: ["You beautiful Genius!", "Einstein would be proud of you!", "You're almost smarter than me!", "You deserve an electronic kiss!"],
-    incorrect: ["I think I overestimated your IQ!", "How could you fail that!", "Shamefully Wrong!", "I knew this even without a brain"]
 };
