@@ -43,7 +43,9 @@ export const QuizQuestion: React.FC = () => {
                         <p className="imposter | color-tertiary-shade">{selectedQuestion.question}</p>
                     </div>
 
-                    <Options allOptions={allOptions} correctOptions={correctOptions} />
+                    <Options 
+                        allOptions={allOptions} 
+                        correctOptions={correctOptions} />
 
                     <Remark
                         correctOption={correctOptions}
