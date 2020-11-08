@@ -1,7 +1,7 @@
-import { 
-    State, 
+import {
+    State,
     Action,
-    GameStatus 
+    GameStatus
 } from "../types";
 
 import { initialState } from "./state";
@@ -14,7 +14,7 @@ export const reducer = (state: State, action: Action): State => {
                 gameRound: action.payload,
                 gameStatus: GameStatus.ONGOING
             }
-        case "REPLAY_GAME": 
+        case "REPLAY_GAME":
             return {
                 ...state,
                 ...initialState,
@@ -25,18 +25,23 @@ export const reducer = (state: State, action: Action): State => {
             return {
                 ...state,
                 currentQuestion: action.payload,
-               answerSelected: false,
-               timeElapsed: true
+                answerSelected: undefined,
+                timeElapsed: 8
+            }
+        case "RUN_TIMER": 
+            return {
+                ...state,
+                timeElapsed: state.timeElapsed - 1
             }
         case "SELECT_ANSWER":
             return {
                 ...state,
-                answerSelected: true,
+                answerSelected: action.payload,
             }
         case "TIME_ELAPSED": {
             return {
                 ...state,
-                timeElapsed: true
+                timeElapsed: 0
             }
         }
         case "END_GAME": {
